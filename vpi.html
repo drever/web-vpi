@@ -1,4 +1,4 @@
-http://cssdeck.com/labs/ping-pong-game-tutorial-with-html5-canvas-and-sounds
+
 
 <!DOCTYPE HTML>
 <html>
@@ -7,11 +7,13 @@ http://cssdeck.com/labs/ping-pong-game-tutorial-with-html5-canvas-and-sounds
       body {
         margin: 0px;
         padding: 0px;
+		background-color: #000000;
       }
+      .nocursor { cursor:none; }
     </style>
   </head>
   <body>
-    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    <canvas id="myCanvas" width="1000" height="1000" class="nocursor"></canvas>
     <script>
     
     
@@ -26,7 +28,7 @@ http://cssdeck.com/labs/ping-pong-game-tutorial-with-html5-canvas-and-sounds
       context.fillStyle = 'green';
       context.fill();
       context.lineWidth = 5;
-      context.strokeStyle = '#003300';
+      context.strokeStyle = '#00FF00';
       context.stroke();
       }
       
@@ -53,7 +55,7 @@ http://cssdeck.com/labs/ping-pong-game-tutorial-with-html5-canvas-and-sounds
            
        x2d += dt * x2dd;
        // Comment this back in, in order to simulate the second oscillator
-       //x2 += dt * x2d;    
+       // x2 += dt * x2d;    
 
        console.log(x2)
     }
@@ -92,7 +94,7 @@ http://cssdeck.com/labs/ping-pong-game-tutorial-with-html5-canvas-and-sounds
               window.webkitRequestAnimationFrame ||
               window.mozRequestAnimationFrame    ||
               function( callback ){
-                window.setTimeout(callback, 100 / 60);
+                window.setTimeout(callback, 1000 / 60);
               };
     })();
 
@@ -104,9 +106,10 @@ http://cssdeck.com/labs/ping-pong-game-tutorial-with-html5-canvas-and-sounds
           
     canvas.addEventListener('mousemove', function(evt) {
         var mousePos = getMousePos(canvas, evt);
-        x2 = (centerX - mousePos.x) /  scale;
+        x2 = -(centerX - mousePos.x) /  scale;
       }, false);
             
     </script>
+	<!--Sources: http://cssdeck.com/labs/ping-pong-game-tutorial-with-html5-canvas-and-sounds -->
   </body>
 </html>
