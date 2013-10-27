@@ -4,3 +4,14 @@ padding: 0px;
 background-color: #000000;
 }
 .vpi-canvas { cursor:none; }
+
+.x.axis line {
+      shape-rendering: auto;
+  }
+
+.line {
+   fill: none;
+   stroke: #00FF00;
+   stroke-width: 1.5px;
+}
+
