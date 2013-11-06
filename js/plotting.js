@@ -1,37 +1,33 @@
 
-var n = 40,
-    random = d3.random.normal(0, .2);
+    var n = 200,
+    random = d3.random.normal(0, 0);
+    var rp = 0;
 
-  var data = d3.range(n).map(random);
-  var domain = [0, n - 1];
-  var interpolation = "linear";
-  var margin = {top: 6, right: 0, bottom: 6, left: 40},
-      width = 960 - margin.right,
-      height = 120 - margin.top - margin.bottom;
+ var domain = [0, n - 1];
+chart([0, n - 1], "linear", function tick(path, line, data, x) { 
 
-  var x = d3.scale.linear()
-      .domain(domain)
-      .range([0, width]);
+  data.push(rp);
+  path.transition()
+      .duration(50)
+      .ease("linear")
+      .attr("d", line)
+      .attr("transform", "translate(" + x(-1) + ")")
+      .each("end", function() { tick(path, line, data, x); });
+  data.shift();
+});
 
-  var y = d3.scale.linear()
-      .domain([-1, 1])
-      .range([height, 0]);
-
-  var line = d3.svg.line()
-      .interpolate(interpolation)
-      .x(function(d, i) { return x(i); })
-      .y(function(d, i) { return y(d); });
 function chart(domain, interpolation, tick) {
+  var data = d3.range(n).map(random);
   var margin = {top: 6, right: 0, bottom: 6, left: 40},
       width = 960 - margin.right,
       height = 120 - margin.top - margin.bottom;
-
+ 
   var x = d3.scale.linear()
       .domain(domain)
       .range([0, width]);
-
+   
   var y = d3.scale.linear()
-      .domain([-1, 1])
+      .domain([-5, 5])
       .range([height, 0]);
 
   var line = d3.svg.line()
@@ -67,18 +63,3 @@ function chart(domain, interpolation, tick) {
 }
 
  
-       // push a new data point onto the back
-       data.push(random());
-
-       chart([0, n - 1], "linear", function tick(path, line, data) { 
-       // redraw the line, and then slide it to the left
-       path
-           .attr("d", line)
-           .attr("transform", null)
-           .transition()
-           .ease("linear")
-           .attr("transform", "translate(" + x(-1) + ")");
-
-           // pop the old data point off the front
-           data.shift();
-       });

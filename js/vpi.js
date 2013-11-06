@@ -86,4 +86,9 @@ function updateHKB(){
    x2d += dt * x2dd;
    // Comment this back in, in order to simulate the second oscillator
    // x2 += dt * x2d;    
+
+   // TODO: The relative phase should be calculated with the Hilbert Transform. How is it calculated online?
+   rp = x1 - x2;
+       
+    
 }
