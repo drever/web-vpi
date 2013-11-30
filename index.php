@@ -22,21 +22,7 @@
       <?php
       $_SESSION['xp'] = 0;
       echo "<a class=\"here\" href=\"";
-      $next=rand(1, 4);
-switch ($next) {
-    case 1:
-        echo "couleurmot.php";
-        break;
-    case 2:
-        echo "couleurson.php";
-        break;
-    case 3:
-        echo "motmot.php";
-        break;
-    case 4:
-        echo "sonmot.php";
-        break;
-        }
+        echo "trial.php";
         echo "\">here</a>";
         
         ?>
