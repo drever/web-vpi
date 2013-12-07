@@ -7,6 +7,9 @@
 	<link href="css/vpi.css" rel="stylesheet" type="text/css">
 =======
 <title>Welcome to Web-VPI</title>
+<<<<<<< HEAD
+>>>>>>> 0b096966280e11db425e50e73e6b5b41bbb8fe0a
+=======
 >>>>>>> 0b096966280e11db425e50e73e6b5b41bbb8fe0a
 </head>
 
