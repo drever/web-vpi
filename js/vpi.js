@@ -26,7 +26,7 @@ var x2dd = 0;
 //HKB parameters
 var mu = -1;
 var A = -0.125;
-var B = -0.025;
+var k = 0.2;
 var dt = 0.01;
 var omega = 1.6 * 2 * 3.142;
 var alpha = 0.641;
@@ -72,14 +72,14 @@ function render(){
 
 function updateHKB(){
     x1dd = 
-       (x1d - mu * x2d) * (A + B * Math.pow((x1 - mu * x2), 2)) 
+       (x1d - mu * x2d) * A * (1 + k * Math.pow((x1 - mu * x2), 2)) 
        - Math.pow(omega, 2) * x1 
        - x1d * (alpha * Math.pow(x1, 2) + beta * Math.pow(x1d, 2) - gamma);        
    x1d += dt * x1dd;
    x1 += dt * x1d;
     
    x2dd = 
-       (x2d - mu * x1d) * (A + B * Math.pow((x2 - mu * x1), 2)) 
+       (x2d - mu * x1d) * A * (1 + k * Math.pow((x2 - mu * x1), 2)) 
        - Math.pow(omega, 2) * x2 
        - x2d * (alpha * Math.pow(x2, 2) + beta * Math.pow(x2d, 2) - gamma);           
            
