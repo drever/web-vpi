@@ -18,7 +18,7 @@ $mu=$_GET['mu'];
 
 $cooperativeness=$_POST['cooperativeness'];
 $humanness=$_POST['humanness'];
-$sql = "INSERT INTO answers VALUES(now(),'$A','$k','$mu','$cooperativeness','$humanness')";
+$sql = "INSERT INTO answers VALUES('',now(),'$A','$k','$mu','$cooperativeness','$humanness')";
 
 
 mysql_select_db('vpi-eeg');
