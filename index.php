@@ -3,7 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Welcome to Web-VPI</title>
-<link href="../style_voyant2.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
