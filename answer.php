@@ -36,12 +36,12 @@ else
 <form method="post" action="<?php $_PHP_SELF ?>">
 <table width="400" border="0" cellspacing="1" cellpadding="2">
 <tr>
-<td width="100">How cooperative was the parner?</td>
-<td><input name="cooperativeness" type="number" id="emp_name"></td>
+<td width="100">How cooperative was the parner? (-5=competitive;0=neutral;5=cooperative)</td>
+<td><input name="cooperativeness" type="number" value="0" min="-5" max="5" id="cooperativeness"></td>
 </tr>
 <tr>
-<td width="100">How realistic was the interaction?</td>
-<td><input name="humanness" type="number" id="emp_address"></td>
+<td width="100">How realistic was the interaction? (0=robot-like;10=human-like)</td>
+<td><input name="humanness" type="number" value="0" min="0" max="10" id="humanness" ></td>
 </tr>
 <tr>
 <td width="100"> </td>
