@@ -10,6 +10,7 @@
        <div>
         <script>
 <?php 
+        $trialDuration = 10 * 1000; // [s * 1000]
         $mu = (2 * rand(0, 1)) - 1;
         $a = myRand(0, 1);
         $k = myRand(0, 1);
@@ -25,8 +26,9 @@
         ?>
         </script>
         <script>
-        var timer = setInterval(trialEnd,3000);
-
+        <?php
+           echo "var timer = setInterval(trialEnd,".$trialDuration.");";
+        ?>
         function trialEnd(){
            <?php echo "window.location = 'answer.php?mu=".$mu."&k=".$k."&a=".$a."';" ?>
         }
