@@ -32,6 +32,10 @@
   </div>
   <div id="footer">
 Project done by Guillaume Dumas and Johannes Drever
+<br>
+References:
+<a href="http://www.scholarpedia.org/article/Haken-Kelso-Bunz_model">Kelso JAS (2008), Haken-Kelso-Bunz model. Scholarpedia, 3(10):1612. </a>
+<a href="www.plosone.org/article/info:doi%2F10.1371%2Fjournal.pone.0005749">Kelso JAS, de Guzman GC, Reveley C, Tognoli E (2009) Virtual Partner Interaction (VPI): Exploring Novel Behaviors via Coordination Dynamics. PLoS ONE 4(6): e5749. doi:10.1371/journal.pone.0005749</a>
   </div>
 </body>
 </html>
