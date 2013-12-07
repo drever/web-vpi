@@ -21,7 +21,7 @@ $humanness=$_POST['humanness'];
 $sql = "INSERT INTO answers VALUES(now(),'$A','$k','$mu','$cooperativeness','$humanness')";
 
 
-mysql_select_db('morphome-vpi');
+mysql_select_db('vpi-eeg');
 $retval = mysql_query( $sql, $conn );
 if(! $retval )
 {
