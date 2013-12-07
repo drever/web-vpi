@@ -4,6 +4,12 @@ padding: 0px;
 background-color: #000000;
 color: #00FF00;
 }
+
+a:link {color:#AAFFAA;}      /* unvisited link */
+a:visited {color:#55FF55;}  /* visited link */
+a:hover {color:#DDFFDD;}  /* mouse over link */
+a:active {color:#BBFFBB;}  /* selected link */
+
 .vpi-canvas { cursor:none; }
 
 .x.axis line {
