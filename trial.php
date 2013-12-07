@@ -10,14 +10,16 @@
        <div>
         <script>
 <?php 
-        echo "var mu = -1;";
-        echo "var A = ".myRand(-5, 5).";";
+        $mu = (2 * rand(0, 1)) - 1;
+        echo "var mu = ".$mu.";";
+        echo "var A = ".myRand(0, 1).";";
         echo "var B = -0.025;";
         echo "var dt = 0.01;";
         echo "var omega = 1.6 * 2 * 3.142;";
         echo "var alpha = 0.641;";
         echo "var beta = 0.05;";
         echo "var gamma = 12.457;";
+        echo "var k = ".myRand(0, 1).";";
         ?>
         </script>
            <script src="js/vpi.js"></script>
