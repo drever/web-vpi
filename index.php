@@ -2,8 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<<<<<<< HEAD
 	<title>Welcome to Web-VPI</title>
 	<link href="css/vpi.css" rel="stylesheet" type="text/css">
+=======
+<title>Welcome to Web-VPI</title>
+>>>>>>> 0b096966280e11db425e50e73e6b5b41bbb8fe0a
 </head>
 
 <body>
