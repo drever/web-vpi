@@ -22,6 +22,11 @@
         echo "var k = ".myRand(0, 1).";";
         ?>
         </script>
+        <script>
+           <?php
+           echo "var timer = setInterval(function(){alert('Hello')},3000);";
+        ?>
+        </script>
            <script src="js/vpi.js"></script>
        </div>
   </body>
