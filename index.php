@@ -29,12 +29,6 @@
       
       </h2>
     </div>
-    <h1>More informations</h1>
-    <h2>The approach : why such a special experiment?<a name="inedite" id="inedite"></a></h2>
-    <h2>The investigation : why studying multisory perception of color?<a name="recherche" id="recherche"></a></h2>
-    </p>
-    <h2>The online survey : how does it work?<a name="oneline" id="oneline"></a></h2>
-    </p>
   </div>
   <div id="footer">
 Project done by Guillaume Dumas and Johannes Drever
