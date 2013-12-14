@@ -1,14 +1,30 @@
 body {
 margin: 0px;
 padding: 0px;	
-background-color: #000000;
-color: #00FF00;
+background-color: #FFFFFF;
+color: #000000;
+font-family: 'Metrophobic', sans-serif;
+font-size: 21px;
 }
 
-a:link {color:#AAFFAA;}      /* unvisited link */
-a:visited {color:#55FF55;}  /* visited link */
-a:hover {color:#DDFFDD;}  /* mouse over link */
-a:active {color:#BBFFBB;}  /* selected link */
+div {
+	border:4px solid;
+	border-radius:25px;
+	margin:50px;
+	padding-top:10px;
+	padding-bottom:35px;
+	padding-right:50px;
+	padding-left:50px;
+	background-color:#FFFAFA;
+	width:40%;
+    margin-left: auto ;
+    margin-right: auto ;
+}
+
+a:link {color:#556B2F;}      /* unvisited link */
+a:visited {color:#006400;}  /* visited link */
+a:hover {color:#98FB98;}  /* mouse over link */
+a:active {color:#3CB371;}  /* selected link */
 
 .vpi-canvas { cursor:none; }
 

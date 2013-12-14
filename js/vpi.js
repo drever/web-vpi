@@ -1,6 +1,6 @@
 // Layout and graphic related
 var centerX = 500;
-var scale = 200;
+var scale = 150;
 
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
@@ -31,18 +31,20 @@ var x2dd = 0;
           
 canvas.addEventListener('mousemove', function(evt) {
     var mousePos = getMousePos(evt);
-    x2 = -(centerX - mousePos.x) /  scale;
+    x2new = -(centerX - mousePos.x) /  scale;
+	x2d = x2-x2new;
+	x2=x2new; 
 }, false);
 
 function drawCircle(centerX, centerY) {    
-    var radius = 40;
+    var radius = 30;
 
     context.beginPath();
     context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
     context.fillStyle = 'green';
     context.fill();
-    context.lineWidth = 5;
-    context.strokeStyle = '#00FF00';
+    context.lineWidth = 4;
+    context.strokeStyle = '#000000';
     context.stroke();
 }
 
@@ -69,7 +71,7 @@ function updateHKB(){
    x1d += dt * x1dd;
    x1 += dt * x1d;
     
-   x2dd = 
+   // x2dd = 
        (x2d - mu * x1d) * A * (1 + R * Math.pow((x2 - mu * x1), 2)) 
        - Math.pow(omega, 2) * x2 
        - x2d * (alpha * Math.pow(x2, 2) + beta * Math.pow(x2d, 2) - gamma);           
