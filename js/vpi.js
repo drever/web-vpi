@@ -23,10 +23,15 @@ var x2d = 0
 var x2dd = 0;
 
 var mouseListenerCount = 0;
-var mouseListenerStart = new Date().getTime() / 1000;
+var countStart = new Date().getTime() / 1000;
 var mouseListener_dt = 0;
+var animationLoopCount = 0;
 
 (function animloop(){
+    now = new Date().getTime() / 1000;
+    animationLoopCount++;
+    dt = 1 / (animationLoopCount / (now - countStart));
+
     requestAnimFrame(animloop);
     updateHKB();
     render();
@@ -37,7 +42,7 @@ canvas.addEventListener('mousemove', function(evt) {
     
     mouseListenerCount++;
     now = new Date().getTime() / 1000;
-    mouseListener_dt = 1 / (mouseListenerCount / (now - mouseListenerStart));
+    mouseListener_dt = 1 / (mouseListenerCount / (now - countStart));
    
     x2new = -(centerX - mousePos.x) /  scale;
 	x2d = (x2 - x2new) * mouseListener_dt;
