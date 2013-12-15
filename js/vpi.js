@@ -22,6 +22,9 @@ var x1dd = 0;
 var x2d = 0
 var x2dd = 0;
 
+var mouseListenerCount = 0;
+var mouseListenerStart = new Date().getTime() / 1000;
+var mouseListener_dt = 0;
 
 (function animloop(){
     requestAnimFrame(animloop);
@@ -31,9 +34,15 @@ var x2dd = 0;
           
 canvas.addEventListener('mousemove', function(evt) {
     var mousePos = getMousePos(evt);
+    
+    mouseListenerCount++;
+    now = new Date().getTime() / 1000;
+    mouseListener_dt = 1 / (mouseListenerCount / (now - mouseListenerStart));
+   
     x2new = -(centerX - mousePos.x) /  scale;
-	x2d = x2-x2new;
-	x2=x2new; 
+	x2d = (x2 - x2new) * mouseListener_dt;
+	x2 = x2new; 
+
 }, false);
 
 function drawCircle(centerX, centerY) {    
@@ -63,25 +72,11 @@ function render(){
 }        
 
 function updateHKB(){
-	 R = -2*k/(1+4*k); 
-    x1dd = 
+   R = -2*k/(1+4*k); 
+   x1dd = 
        (x1d - mu * x2d) * A * (1 + R * Math.pow((x1 - mu * x2), 2)) 
        - Math.pow(omega, 2) * x1 
        - x1d * (alpha * Math.pow(x1, 2) + beta * Math.pow(x1d, 2) - gamma);        
    x1d += dt * x1dd;
    x1 += dt * x1d;
-    
-   // x2dd = 
-       (x2d - mu * x1d) * A * (1 + R * Math.pow((x2 - mu * x1), 2)) 
-       - Math.pow(omega, 2) * x2 
-       - x2d * (alpha * Math.pow(x2, 2) + beta * Math.pow(x2d, 2) - gamma);           
-           
-   x2d += dt * x2dd;
-   // Comment this back in, in order to simulate the second oscillator
-   // x2 += dt * x2d;    
-
-   // TODO: The relative phase should be calculated with the Hilbert Transform. How is it calculated online?
-   rp = x1 - x2;
-       
-    
 }
