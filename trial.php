@@ -18,7 +18,7 @@
         echo "var A = ".$a.";";
         echo "var B = -0.025;";
         echo "var dt = 0.01;";
-        echo "var omega = 1.4 * 2 * 3.142;";
+        echo "var omega = 1. * 2 * 3.142;";
         echo "var alpha = 0.641;";
         echo "var beta = 0.05;";
         echo "var gamma = 12.457;";
