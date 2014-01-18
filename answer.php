@@ -36,25 +36,40 @@ mysql_close($conn);
 else
 {
 ?>
-	<div style="height:240px;width:400px;">
+	<div style="height:380px;width:280px;">
 	<h1> Report </h1>
 <form method="post" action="<?php $_PHP_SELF ?>">
 <table width="400" border="0" cellspacing="1" cellpadding="2">
 <tr>
-<td width="350">How cooperative was the parner? <br>(-5=competitive;0=neutral;5=cooperative)</td>
-<td><input name="cooperativeness" type="number" value="0" min="-5" max="5" id="cooperativeness" size="5"></td>
+<td width="400">How cooperative was the partner?</td>
+</tr>
+<tr>
+<td>	
+	<input type="radio" name="cooperativeness" value="-1" style="margin-left: 50px">Very competitive
+	<br><input type="radio" name="cooperativeness" value="-0.5" style="margin-left: 50px">Competitive
+	<br><input type="radio" name="cooperativeness" value="0" style="margin-left: 50px">Neutral
+	<br><input type="radio" name="cooperativeness" value="0.5" style="margin-left: 50px">Cooperative
+	<br><input type="radio" name="cooperativeness" value="1" style="margin-left: 50px">Very Cooperative
+</td>
 </tr>
 <td>
 <tr></tr>
 </td>
 <tr>
-<td width="350">How realistic was the interaction?<br>(0=robot-like;10=human-like)</td>
-<td><input name="humanness" type="number" value="0" min="0" max="10" id="humanness" size="5"></td>
+<td width="400">How realistic was the interaction?<br></td>
 </tr>
 <tr>
-<td width="350"> </td>
 <td>
-<input name="Answer" type="submit" id="Answer" value="Answer">
+	<input type="radio" name="humanness" value="-1" style="margin-left: 50px">Robot like
+	<br><input type="radio" name="humanness" value="-0.5" style="margin-left: 50px">Slightly robot like
+	<br><input type="radio" name="humanness" value="0" style="margin-left: 50px">I don't know...
+	<br><input type="radio" name="humanness" value="0.5" style="margin-left: 50px">Slightly human like
+	<br><input type="radio" name="humanness" value="1" style="margin-left: 50px">Human like
+</td>
+</tr>
+<tr>
+<td width="300">
+<input name="Answer" type="submit" id="Answer" value="Answer" style="margin-left: 200px">
 </td>
 </tr>
 </table>

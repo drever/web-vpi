@@ -1,6 +1,6 @@
 // Layout and graphic related
 var centerX = 500;
-var scale = 150;
+var scale = 100;
 
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
@@ -26,28 +26,21 @@ var mouseListenerCount = 0;
 var countStart = new Date().getTime() / 1000;
 var mouseListener_dt = 0;
 var animationLoopCount = 0;
+var lastMousePosition = { 'x' : 0, 'y' : 0};
 
 (function animloop(){
-    now = new Date().getTime() / 1000;
-    animationLoopCount++;
-    dt = 1 / (animationLoopCount / (now - countStart));
-
-    requestAnimFrame(animloop);
-    updateHKB();
-    render();
+	now = new Date().getTime() / 1000;
+	animationLoopCount++;
+	dt = 1 / (animationLoopCount / (now - countStart));
+	requestAnimFrame(animloop);
+	updateMouseVelocity();
+	updateHKB();
+	render();
 })();
           
 canvas.addEventListener('mousemove', function(evt) {
-    var mousePos = getMousePos(evt);
-    
-    mouseListenerCount++;
-    now = new Date().getTime() / 1000;
-    mouseListener_dt = 1 / (mouseListenerCount / (now - countStart));
-   
-    x2new = -(centerX - mousePos.x) /  scale;
-	x2d = (x2 - x2new) * mouseListener_dt;
-	x2 = x2new; 
-
+	var mousePos = getMousePos(evt);
+	lastMousePosition=mousePos;
 }, false);
 
 function drawCircle(centerX, centerY) {    
@@ -75,6 +68,12 @@ function render(){
     drawCircle(x1 * scale + centerX, 200);
     drawCircle(x2 * scale + centerX, 400);        
 }        
+
+function updateMouseVelocity(){
+	x2new = -(centerX - lastMousePosition.x) /  scale;
+	x2d = (x2 - x2new) * dt;
+	x2 = x2new; 
+}
 
 function updateHKB(){
    R = -2*k/(1+4*k); 
