@@ -38,7 +38,7 @@ else
 ?>
 	<div style="height:380px;width:280px;">
 	<h1> Report </h1>
-<form method="post" action="<?php $_PHP_SELF ?>">
+<form id="radio-form" onsubmit="return validate();" method="post" action="<?php $_PHP_SELF ?>">
 <table width="400" border="0" cellspacing="1" cellpadding="2">
 <tr>
 <td width="400">How cooperative was the partner?</td>
@@ -78,5 +78,42 @@ else
 }
 ?>
 </div>
+
+<script>
+function validate() {
+    // check cooperativeness input
+    var r = document.getElementsByName("cooperativeness");
+    var c = -1;
+
+    for(var i=0; i < r.length; i++){
+        if(r[i].checked) {
+            c = i; 
+        }
+    }
+
+    if (c == -1) {
+        alert("Please select cooperativeness and humaness.");
+        return false;
+    }
+
+    // check humanness input
+    var r = document.getElementsByName("cooperativeness");
+    var c = -1;
+
+    for(var i=0; i < r.length; i++){
+        if(r[i].checked) {
+            c = i; 
+        }
+    }
+
+    if (c == -1) {
+        alert("Please select cooperativeness and humaness.");
+        return false;
+    }
+    return true;
+}
+
+</script>
+
 </body>
 </html>
